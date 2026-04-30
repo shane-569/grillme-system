@@ -30,3 +30,35 @@ A structured workflow to convert:
 ```bash
 npm install
 npm run validate
+
+---
+
+# ⚙️ GitHub Actions (Validation)
+
+## `.github/workflows/validate-structure.yml`
+
+```yaml id="q8h2mz"
+name: Validate GrillMe Structure
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install deps
+        run: npm install
+
+      - name: Run validation
+        run: npm run validate
