@@ -1,0 +1,30 @@
+name: User Story
+description: Define a user story
+title: "[USER STORY] "
+labels: ["user-story"]
+
+body:
+  - type: textarea
+    id: story
+    attributes:
+      label: User Story
+      description: As a..., I want..., so that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: List conditions
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
